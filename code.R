@@ -8,8 +8,15 @@ colnames(data)
 
 data <- subset(data, select = - c(STATE,DENSTR2,WEIGHT2,HEIGHT3,CTYCODE1,ZIPCODE,HTIN4,HTM4,WTKG3))
 
-#Dropping the columns that have general inforamation and not related to the diabetes
+#Dropping the columns that have general inforamation and not related to diabetes
 
 data <- subset(data, select = - c(REPNUM, REPDEPTH,FMONTH,IDATE,IMONTH,IDAY,IYEAR,PSU,NATTMPTS,NRECSEL,NRECSTR))
 
+#checking for null values
+
+colSums(is.na(data))
+
+#For STATERES Column, changing the null values to 0 (Assuming blanks as "Non State residents")
+
+table(data$STATERES, exclude = NULL)
 
