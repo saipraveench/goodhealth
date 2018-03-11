@@ -10,3 +10,6 @@ data <- subset(data, select = - c(STATE,DENSTR2,WEIGHT2,HEIGHT3,CTYCODE1,ZIPCODE
 
 #Dropping the columns that have general inforamation and not related to the diabetes
 
+data <- subset(data, select = - c(REPNUM, REPDEPTH,FMONTH,IDATE,IMONTH,IDAY,IYEAR,PSU,NATTMPTS,NRECSEL,NRECSTR))
+
+
